@@ -1,0 +1,17 @@
+item {
+	id: 1
+	name: 'Glassdoor'
+}
+item {
+	id: 2
+	name: 'Detergent Box'
+}
+item {
+	id: 3
+	name: 'User Interface'
+}
+item {
+	id: 4
+	name: 'Knob'
+}
+
