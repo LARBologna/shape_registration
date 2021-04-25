@@ -85,10 +85,26 @@ $ source devel/setup.bash
 ```
 3) Run *obj_detection.py* script
 ```sh
-$ rosrun ui_interpretation obj_detection.py
+$ rosrun pcl_registration obj_detection.py
 ```
 
-**Shape registration** is used to refine the model alignment after initial projection. To compare different implementations of the ICP algorithm, we developed three different implementations:
+### Shape registration
+The registration is used to refine the model alignment after initial projection. To compare different implementations of the ICP algorithm, we developed three different implementations:
 - CPU-based ICP  implementation using PCL library 
 - GPU-based ICP implementation using naive search method
 - GPU-based ICP implementation using OcTree search method
+
+After running the object detection script, pose estimation of the appliance is initially estimated in *obj_detection.py* script. The estimated matrix is sent as ROS message to be used in the fine alignment as initial rough projection. Assuming workspace of the project is active:
+1) To run CPU-based implementation 
+```sh
+$ rosrun pcl_registration pcl_register_CPU
+```
+2) Or to run GPU-based implementation 
+```sh 
+$ rosrun pcl_registration pcl_register_CUDA_alternative  
+```
+To switch between naive and OcTree search methods, we need to modify the code below in *pcl_register_CUDA_alternative.cpp* source file:
+```sh
+#define GPU_NAIVE false
+#define GPU_OCTREE true
+```
