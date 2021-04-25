@@ -3,8 +3,7 @@
 The shape registration project is a ROS package used for accurate alignment of 3D CAD model onto an incomplete scene of a certain object which is fetched by RGB-D camera that attached on the robot in an indoor environment.
 
 This algorithm consists of two main modules:
-- Object Detection 
-- Pose Estimation 
+- Object Detection and Pose Estimation 
 - Fine registration 
 
 1) Object Detection:
@@ -89,4 +88,4 @@ $ source devel/setup.bash
 $ rosrun ui_interpretation obj_detection.py
 ```
 
-** Shape registration **
+**Shape registration** 
