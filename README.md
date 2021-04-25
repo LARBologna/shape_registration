@@ -88,4 +88,7 @@ $ source devel/setup.bash
 $ rosrun ui_interpretation obj_detection.py
 ```
 
-**Shape registration** 
+**Shape registration** is used to refine the model alignment after initial projection. To compare different implementations of the ICP algorithm, we developed three different implementations:
+- CPU-based ICP  implementation using PCL library 
+- GPU-based ICP implementation using naive search method
+- GPU-based ICP implementation using OcTree search method
